@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>C Programming Basics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+           
+          :root {
+    --bg: #020617;
+    --card: #0f172a;
+    --border: rgba(255,255,255,0.08);
+    --primary: #38bdf8;
+    --secondary: #22c55e;
+    --accent: #f472b6;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --code-bg: #010313;
+}
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #020617, #0f172a);
+            margin: 0;
+            color: #f5f7fa;
+            line-height: 1.7;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #4dd0e1;
+             font-size: 2.6rem;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 1.1rem;
+            color: #dcefff;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: #ffca28;
+            border-left: 6px solid #ffca28;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #81d4fa;
+            margin-top: 30px;
+        }
+
+        p {
+            color: #e3f2fd;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        code {
+            color: #00e5ff;
+        }
+
+        pre {
+            background: #0d1117;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        pre code {
+            color: #c9d1d9;
+            font-size: 0.95rem;
+        }
+
+        .highlight {
+            color: #ff8a65;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            color: #90caf9;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Understanding C Programming</h1>
+    <p>Learn syntax, variables, data types, and operators in C with clear explanations and practical examples.</p>
+</header>
+
+<section>
+    <h2>1. Basic Syntax of C</h2>
+    <p>
+        C programs follow a specific structure. Every C program must have a
+        <span class="highlight">main()</span> function where execution starts.
+    </p>
+
+    <h3>Example Program</h3>
+    <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!");
+    return 0;
+}
+    </code></pre>
+
+    <ul>
+        <li><code>#include &lt;stdio.h&gt;</code> → Includes input/output functions</li>
+        <li><code>int main()</code> → Entry point of the program</li>
+        <li><code>printf()</code> → Displays output</li>
+        <li><code>return 0;</code> → Ends program execution</li>
+    </ul>
+</section>
+
+<section>
+    <h2>2. Variables in C</h2>
+    <p>
+        A variable is a container used to store data values. Each variable must be declared with a data type.
+    </p>
+
+    <h3>Syntax</h3>
+    <pre><code>
+data_type variable_name;
+    </code></pre>
+
+    <h3>Example</h3>
+    <pre><code>
+int age = 20;
+float height = 5.9;
+char grade = 'A';
+    </code></pre>
+
+    <ul>
+        <li><code>int</code> → Stores integers</li>
+        <li><code>float</code> → Stores decimal values</li>
+        <li><code>char</code> → Stores single characters</li>
+    </ul>
+</section>
+
+<section>
+    <h2>3. Data Types in C</h2>
+
+    <h3>Primary Data Types</h3>
+    <ul>
+        <li><code>int</code> → Integer values</li>
+        <li><code>float</code> → Decimal numbers</li>
+        <li><code>double</code> → Large decimal numbers</li>
+        <li><code>char</code> → Single character</li>
+    </ul>
+
+    <h3>Example</h3>
+    <pre><code>
+int count = 10;
+float price = 99.99;
+double pi = 3.141592;
+char letter = 'C';
+    </code></pre>
+</section>
+
+<section>
+    <h2>4. Operators in C</h2>
+
+    <h3>Arithmetic Operators</h3>
+    <ul>
+        <li><code>+</code> Addition</li>
+        <li><code>-</code> Subtraction</li>
+        <li><code>*</code> Multiplication</li>
+        <li><code>/</code> Division</li>
+        <li><code>%</code> Modulus</li>
+    </ul>
+
+    <pre><code>
+int a = 10, b = 3;
+printf("%d", a + b); // 13
+    </code></pre>
+
+    <h3>Relational Operators</h3>
+    <ul>
+        <li><code>==</code> Equal to</li>
+        <li><code>!=</code> Not equal</li>
+        <li><code>&gt;</code> Greater than</li>
+        <li><code>&lt;</code> Less than</li>
+    </ul>
+
+    <h3>Logical Operators</h3>
+    <ul>
+        <li><code>&&</code> Logical AND</li>
+        <li><code>||</code> Logical OR</li>
+        <li><code>!</code> Logical NOT</li>
+    </ul>
+
+    <pre><code>
+int x = 5, y = 10;
+if (x < y && y > 0) {
+    printf("Condition is true");
+}
+    </code></pre>
+</section>
+
+<footer>
+    <p>© 2026 C Programming Learning Page | Designed with ❤️</p>
+</footer>
+
+</body>
+</html>

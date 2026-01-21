@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming | Learn & Build</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+  :root {
+    --bg: #020617;
+    --card: #0f172a;
+    --border: rgba(255,255,255,0.08);
+    --primary: #38bdf8;
+    --secondary: #22c55e;
+    --accent: #f472b6;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --code-bg: #010313;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(to right, #020617, #020617cc),
+            url("https://images.unsplash.com/photo-1518770660439-4636190af475") center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #38bdf8;
+        }
+
+        header p {
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            background: #38bdf8;
+            color: #020617;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0ea5e9;
+        }
+
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #38bdf8;
+            font-size: 2.6rem;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #020617;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 10px;
+            color: #38bdf8;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        footer {
+            background: #020617;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: #38bdf8;
+        }
+     #mydiv {
+     visibility: hidden;
+    /*display: none;*/ /* hides the div completely */
+     
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <h1>C Programming</h1>
+        <p>Master the foundation of modern programming. Learn C language with clean concepts, real examples, and practical projects.</p>
+        <a href="#topics" class="btn">Get Started</a>
+    </div>
+</header>
+
+<section id="topics">
+    <div class="section-title">
+        <h2>Core Topics</h2>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" alt="C Basics">
+            <div class="card-content">
+                <h3><a href="file:///L:/Fact_Arundhati/C Basics.html">C Basics</a></h3>
+                <p>Understand syntax, variables, data types, and operators.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f" alt="Control Flow">
+            <div class="card-content">
+                <h3><a href = "file:///L:/Fact_Arundhati/Controlflow.html">Control Flow</a></h3>
+                <p>Learn loops, conditions, and decision-making in C.</p>
+            </div>
+        </div>
+
+           <div class="card">
+            <img src="https://png.pngtree.com/thumb_back/fh260/background/20240610/pngtree-computer-of-a-programmer-with-lines-code-of-software-image_15746003.jpg" alt="Functions">
+            <div class="card-content">
+                <h3><a href = "file:///L:/Fact_Arundhati/Functions.html">Functions</a></h3>
+                <p>Functions, Strings and String Functions</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="Pointers">
+            <div class="card-content">
+                <h3><a href = "file:///L:/Fact_Arundhati/Pointers.html">Pointers</a></h3>
+                <p>Master pointers, memory allocation, and arrays.</p>
+            </div>
+        </div>
+
+         
+
+         <div class="card">
+            <img src="https://di.ku.dk/Nyheder/2023/fremtidens-programmeringssprog-udvikles-i-danmark/programming_on_screen-1100x600.jpg" alt="Structure & File Handling">
+            <div class="card-content">
+                <h3><a href="file:///L:/Fact_Arundhati/Structures.html">Structure</a></h3>
+                <p>Structure & File Handling </p>
+            </div>
+        </div>
+
+
+        <div class="cards">
+        <div class="card">
+            <img src="https://images.presentationgo.com/2025/04/software-developer-coding-laptop.jpg" alt="Practice Programs">
+            <div class="card-content">
+                <h3><a href="file:///L:/Fact_Arundhati/Practicals.html">Practice Programs</a></h3>
+                <p>Understand syntax, variables, data types, and operators.</p>
+            </div>
+        </div>
+    </div>
+       
+     <div class="card" id="mydiv">
+         <img src="https://img.freepik.com/premium-photo/software-developers-working-together-coding-testing-applications-modern-development-environment-concept-collaborative-coding-application-testing-modern-development_864588-56114.jpg" alt="Structure & File Handling">
+            <div class="card-content">
+                <h3>Practice Paper</h3>
+                <p>Practice question Papers </p>
+            </div>
+        </div>     
+
+      <div class="card">
+     <img src="https://img.freepik.com/premium-photo/software-developers-working-together-coding-testing-applications-modern-development-environment-concept-collaborative-coding-application-testing-modern-development_864588-56114.jpg" alt="Structure & File Handling">
+            <div class="card-content">
+                <h3><a href="file:///L:/Fact_Arundhati/papers.html">Practice Paper</a></h3>
+                <p>Practice question Papers </p>
+            </div>
+        </div>
+      
+</section>
+
+<section>
+    <div class="section-title">
+        <h2>Why Learn C?</h2>
+    </div>
+
+    <div class="about">
+        <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159" alt="C Programming">
+        <div>
+            <p>
+                C is the backbone of modern software. Operating systems,
+                embedded systems, game engines, and compilers rely on C.
+                Learning C strengthens your understanding of how computers work.
+            </p>
+            <p>
+                It improves problem-solving skills and makes learning other
+                languages easier.
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 <span>C Programming</span> | Designed for Learning</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Arrays and Pointers in C</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #020617;
+    --card: #0f172a;
+    --border: rgba(255,255,255,0.08);
+    --primary: #38bdf8;
+    --secondary: #22c55e;
+    --accent: #f472b6;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --code-bg: #010313;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #020617, #000);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+header {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+header h1 {
+    font-size: 2.6rem;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    max-width: 750px;
+    margin: 1rem auto 0;
+    color: var(--muted);
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem 1rem 4rem;
+}
+
+section {
+    background: rgba(15,23,42,0.85);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 2.2rem;
+    margin-bottom: 2.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+}
+
+h2 {
+    font-size: 1.9rem;
+    color: #ffca28;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    color: #22d3ee;
+    margin-top: 1.6rem;
+}
+
+ul {
+    padding-left: 1.2rem;
+    margin-top: 0.8rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    color: var(--muted);
+}
+
+pre {
+    background: var(--code-bg);
+    padding: 1.2rem;
+    border-radius: 14px;
+    overflow-x: auto;
+    margin-top: 0.8rem;
+    border-left: 4px solid var(--primary);
+}
+
+pre.syntax { border-left-color: var(--secondary); }
+pre.example { border-left-color: var(--accent); }
+
+code {
+    font-family: Consolas, monospace;
+    font-size: 0.95rem;
+    color: #e5e7eb;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Arrays and Pointers in C</h1>
+    <p>Detailed explanation of arrays and pointers in C programming with syntax and multiple examples.</p>
+</header>
+
+<main>
+
+<!-- ARRAYS INTRO -->
+<section>
+    <h2>1. Arrays in C</h2>
+    <p>
+        An <strong>array</strong> is a collection of elements of the same data type stored in
+        <strong>contiguous memory locations</strong>. It allows storing multiple values using a single variable name.
+    </p>
+
+    <ul>
+        <li>Index starts from <code>0</code></li>
+        <li>Fast access using index</li>
+        <li>Array name represents base address</li>
+    </ul>
+</section>
+
+<!-- 1D ARRAY -->
+<section>
+    <h2>1.1 One-Dimensional Array</h2>
+
+    <h3>Syntax</h3>
+    <pre class="syntax"><code>
+data_type array_name[size];
+    </code></pre>
+
+    <h3>Example</h3>
+    <pre class="example"><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int marks[5] = {70, 85, 90, 88, 76};
+
+    for(int i = 0; i &lt; 5; i++) {
+        printf("%d ", marks[i]);
+    }
+    return 0;
+}
+    </code></pre>
+</section>
+
+<!-- 2D ARRAY -->
+<section>
+    <h2>1.2 Two-Dimensional Array</h2>
+
+    <h3>Syntax</h3>
+    <pre class="syntax"><code>
+data_type array_name[rows][columns];
+    </code></pre>
+
+    <h3>Example</h3>
+    <pre class="example"><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int matrix[2][2] = {
+        {1, 2},
+        {3, 4}
+    };
+
+    for(int i = 0; i &lt; 2; i++) {
+        for(int j = 0; j &lt; 2; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+    </code></pre>
+</section>
+
+<!-- POINTERS INTRO -->
+<section>
+    <h2>2. Pointers in C</h2>
+    <p>
+        A <strong>pointer</strong> is a variable that stores the <strong>memory address</strong>
+        of another variable. Pointers allow direct memory manipulation.
+    </p>
+
+    <ul>
+        <li>Used for dynamic memory allocation</li>
+        <li>Improves performance</li>
+        <li>Essential for arrays and functions</li>
+    </ul>
+</section>
+
+<!-- POINTER SYNTAX -->
+<section>
+    <h2>2.1 Pointer Declaration and Initialization</h2>
+
+    <h3>Syntax</h3>
+    <pre class="syntax"><code>
+data_type *pointer_name;
+    </code></pre>
+
+    <h3>Example</h3>
+    <pre class="example"><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 10;
+    int *ptr = &a;
+
+    printf("Value of a: %d\n", a);
+    printf("Address of a: %p\n", ptr);
+    printf("Value using pointer: %d\n", *ptr);
+
+    return 0;
+}
+    </code></pre>
+</section>
+
+<!-- POINTER ARITHMETIC -->
+<section>
+    <h2>2.2 Pointer Arithmetic</h2>
+    <p>
+        Pointer arithmetic allows moving through memory locations.
+        Incrementing a pointer moves it by the size of its data type.
+    </p>
+
+    <pre class="example"><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[3] = {10, 20, 30};
+    int *ptr = arr;
+
+    for(int i = 0; i &lt; 3; i++) {
+        printf("%d ", *(ptr + i));
+    }
+    return 0;
+}
+    </code></pre>
+</section>
+
+<!-- ARRAY & POINTER -->
+<section>
+    <h2>2.3 Relationship Between Arrays and Pointers</h2>
+    <p>
+        The name of an array is a pointer to its first element.
+        Therefore, arrays and pointers are closely related.
+    </p>
+
+    <pre class="example"><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[4] = {5, 10, 15, 20};
+
+    for(int i = 0; i &lt; 4; i++) {
+        printf("%d ", *(arr + i));
+    }
+    return 0;
+}
+    </code></pre>
+</section>
+
+<!-- ADV & LIMIT -->
+<section>
+    <h2>Advantages of Using Pointers</h2>
+    <ul>
+        <li>Efficient memory usage</li>
+        <li>Supports dynamic memory allocation</li>
+        <li>Useful for large data structures</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Common Mistakes with Pointers</h2>
+    <ul>
+        <li>Using uninitialized pointers</li>
+        <li>Forgetting to free allocated memory</li>
+        <li>Accessing invalid memory locations</li>
+    </ul>
+</section>
+
+</main>
+
+<footer>
+    © 2026 | Arrays & Pointers in C | Modern Dark UI
+</footer>
+
+</body>
+</html>
